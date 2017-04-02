@@ -30,6 +30,7 @@ options     word
     `bufname('%') ==#'[Command Line]' ? expand('#') : expand('%')`${0}
 
 snippet     path
+alias       pwd
 options     word
     `substitute(bufname('%') ==#'[Command Line]' ? expand('#:p') : expand('%:p'), '//\+', '/', 'g')`${0}
 
