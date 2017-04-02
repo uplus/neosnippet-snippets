@@ -9,7 +9,9 @@ snippet interface
     }
 
 snippet method
-    ${1:void} ${2:#:method}(${3}) ${4:throws} {
+alias m
+options head
+    ${1:void} ${2:method}(${3}) ${4:throws} {
         ${0:TARGET}
     }
 
@@ -20,50 +22,58 @@ abbr enum {}
     }
 
 snippet var
-    ${1:#:type} ${2:#:var}${3};
+alias v
+    ${1:String} ${2:var}${3: = null};
+    ${0}
 
 snippet const
-    static public final ${1:#:type} ${2:#:var} = ${3};${4}
+alias co
+options head
+    static public final ${1:String} ${2:var} = ${3};${4}
 
 snippet const_string
-    static public final String ${1:var} = "${2}";${4}
+alias cos
+options head
+  static public final String ${1:var} = "${2}";${4}
 
 snippet assert
     assert ${1:#:test} : ${2:#:Failure message};${3}
 
 snippet if
-    if (${1}) {
+    if(${1}){
         ${2:TARGET}
     }
 
-snippet elif
-alias elseif
-    else if (${1}) {
+snippet elseif
+alias elif
+    else if(${1}){
         ${2:TARGET}
     }
 
 snippet while
-    while (${1}) {
+    while(${1}){
         ${2:TARGET}
     }
 
 snippet for
-    for (${1}; ${2}; ${3}) {
+    for(${1}; ${2}; ${3}){
         ${4:TARGET}
     }
 
 snippet foreach
 alias   fore
-    for (${1} : ${2}) {
+    for(${1} : ${2}){
         ${3:TARGET}
     }
 
 snippet switch
-    switch (${1}) {
+alias sw
+    switch(${1}){
         ${2:TARGET}
     }
 
 snippet case
+alias ca
     case ${1}:
         ${2:TARGET}
     ${0}
@@ -79,28 +89,28 @@ alias   de
 snippet try
     try {
         ${0:TARGET}
-    } catch (${1:Exception} ${2:e}) {
+    } catch(${1:Exception} ${2:e}){
         ${3:e.printStackTrace();}
     }
 
 snippet try_resources
-    try (${1:#:Resources}) {
+    try(${1:#:Resources}){
         ${0:TARGET}
-    } catch (${2:Exception} ${3:e}) {
+    } catch(${2:Exception} ${3:e}){
         ${4:e.printStackTrace();}
     }
 
 snippet try_finally
     try {
         ${0:TARGET}
-    } catch (${1:Exception} ${2:e}) {
+    } catch(${1:Exception} ${2:e}){
         ${3:e.printStackTrace();}
     } finally {
         ${4}
     }
 
 snippet catch
-    catch (${1:Exception} ${2:e}) {
+    catch(${1:Exception} ${2:e}){
         ${0:e.printStackTrace();}
     }
 
@@ -118,15 +128,15 @@ options word
     synchronized
 
 snippet testclass
-alias   tc
 options head
     public class ${1} extends ${2:TestCase} {
         ${0:TARGET}
     }
 
 snippet test
+alias t
 options head
-    public void test${1:#:Name}() throws Exception {
+    public void test${1:Name}() throws Exception {
         ${0:TARGET}
     }
 
@@ -152,7 +162,7 @@ snippet j.m
 
 snippet main
     class `expand('%:p:t:r')` {
-        public static void main(String args[]) {
+        public static void main(String args[]){
             ${0:#:body}
         }
     }
@@ -230,7 +240,7 @@ alias ver
 snippet     helloworld
 options     head
   public class ${1:Hello} {
-    static public void main(String args[]) {
+    static public void main(String args[]){
       System.out.println("Hello, world!");
     }
   }
