@@ -11,6 +11,7 @@ options     head
         ${0:TARGET}
 
 snippet     ifelse
+alias       ife
 abbr        if else endif
 options     head
     if ${1:#:condition}
@@ -35,7 +36,7 @@ options     head
 
 snippet     function
 abbr        func endfunc
-alias       func
+alias       fun
 options     head
     function! ${1:#:func_name}(${2}) abort
       ${0:TARGET}
