@@ -88,11 +88,11 @@ options     head
 
 snippet     warn
 options     head
-	echo "${0:TARGET}" 1>&2
+	echo "${0:TARGET}" >&2
 
 snippet     abort
 options     head
-	echo "${0:TARGET}" 1>&2
+	echo "${0:TARGET}" >&2
 	exit 1
 
 # vim: set noexpandtab :

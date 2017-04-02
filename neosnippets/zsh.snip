@@ -1,6 +1,6 @@
-include sh.snip
+# zshよりshが優先される
+# include sh.snip
 
 snippet     zplug
 abbr zplug "plugin"
         zplug "`getreg('+')=='' ? '<\`0\`>' : getreg('+')`"${0}
-
