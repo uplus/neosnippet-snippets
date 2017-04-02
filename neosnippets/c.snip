@@ -1,7 +1,7 @@
 snippet     if
 options     head
-abbr        if () {}
-    if (${1:#:condition}) {
+abbr        if(){}
+    if(${1:#:condition}){
         ${0:TARGET}
     }
 
@@ -13,14 +13,14 @@ options     head
 
 snippet elseif
 options     head
-    else if (${1:#:condition}) {
+    else if(${1:#:condition}){
         ${0:TARGET}
     }
 
 snippet     ifelse
 options     head
-abbr        if () {} else {}
-    if (${1:#:condition}) {
+abbr        if(){} else {}
+    if(${1:#:condition}){
         ${2:TARGET}
     } else {
         ${3}
@@ -28,15 +28,15 @@ abbr        if () {} else {}
 
 snippet     for
 options     head
-abbr        for () {}
-    for (${1:int} ${2:i} = ${3:0}; $2 < ${4}; $2++) {
+abbr        for(){}
+    for(${1:int} ${2:i} = ${3:0}; $2 < ${4}; $2++){
         ${0:#:TARGET}
     }
 
 snippet     while
 options     head
-abbr        while () {}
-    while (${1:#:condition}) {
+abbr        while(){}
+    while(${1:#:condition}){
         ${0:TARGET}
     }
 
@@ -49,8 +49,8 @@ alias       do
 
 snippet     switch
 options     head
-abbr        switch () {}
-    switch (${1:#:var}) {
+abbr        switch(){}
+    switch(${1:#:var}){
         case ${2:#:val}:
             ${0:TARGET}
             break;
@@ -59,8 +59,8 @@ abbr        switch () {}
 snippet     function
 options     head
 alias       func
-abbr        func() {}
-    ${1:void} ${2:#:func_name}(${3:#:args}) {
+abbr        func(){}
+    ${1:void} ${2:#:func_name}(${3:#:args}){
         ${0:TARGET}
     }
 
@@ -99,6 +99,7 @@ snippet inc
 options     head
 alias   #inc, #include
     #include <${1:stdio}.h>${0}
+
 # #include "..."
 snippet inc2
 options     head
@@ -116,7 +117,7 @@ abbr #ifndef ... #define ... #endif
 snippet def
 options     head
 alias   #def, #define
-    #define 
+    #define
 
 # Include-Guard
 snippet once
@@ -130,7 +131,7 @@ abbr include-guard
 
 # Ternary conditional operator
 snippet conditional
-    (${1:#:condition}) ? ${2:#:a} : ${3:#:b}
+    (${1:#:condition})? ${2:#:a} : ${3:#:b}
 
 snippet typedef
     typedef ${1:#:base_type} ${2:#:custom_type};
@@ -170,3 +171,7 @@ abbr fopen("...", "...");
 snippet fgets
 abbr fgets(row, length, file);
     fgets(${0:ROW}, ${1:LENGTH}, ${2:FILE});
+
+
+
+# uplus
