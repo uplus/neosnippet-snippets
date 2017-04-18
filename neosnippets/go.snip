@@ -17,8 +17,8 @@ snippet     func
 abbr        func ...() { ... }
 alias fn
 options     head
-  func ${1:fname}(${2}) ${3:int }{
-    ${0:TARGET:return }
+  func ${1:fname}(${2}) ${3}{
+    ${0}
   }
 
 snippet     import
@@ -32,6 +32,7 @@ snippet     package
 alias pk
 options     head
   package ${1:main}
+  ${0}
 
 snippet     printf
 alias pf
@@ -67,8 +68,8 @@ snippet     range
 alias forr
 abbr        for range
 options     head
-  for ${1:v} := range ${2:#:iterator} {
-    ${0:TARGET}
+  for ${1:_,v} := range ${2:#:iterator} {
+    ${0}
   }
 
 snippet     if
