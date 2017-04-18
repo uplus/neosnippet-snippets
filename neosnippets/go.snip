@@ -26,14 +26,12 @@ alias im
 options     head
   import (
     "${1:fmt}"
-  )
-  ${0:TARGET}
+  )${0}
 
 snippet     package
 alias pk
 options     head
   package ${1:main}
-  ${0:TARGET}
 
 snippet     printf
 alias pf
@@ -66,6 +64,7 @@ options     head
   }
 
 snippet     range
+alias forr
 abbr        for range
 options     head
   for ${1:v} := range ${2:#:iterator} {
@@ -124,4 +123,3 @@ options     head
       ${4}
     }
   }
-
