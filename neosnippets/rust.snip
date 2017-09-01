@@ -4,35 +4,35 @@ snippet     fn
 abbr        fn () {}
 options     head
     fn ${1:#:func_name}(${2:#:args}) {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     fn-
 abbr        fn () {}
 options     head
     fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     pubfn
 abbr        pubfn () {}
 options     head
     pub fn ${1:#:func_name}(${2:#:args}) -> ${3:#:()} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     test
 options     head
     #[test]
     fn ${1:#:test_function_name}() {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     pubnew
 abbr        pub fn new() {}
 options     head
     pub fn new(${1}) -> ${2:#:Name} {
-        ${0:TARGET}
+        ${0}
     }
 
 # macros
@@ -43,23 +43,23 @@ snippet     macro
 snippet     bfl
 abbr        bitflags!
     bitflags! {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     pln
 abbr        println!
-    println!(${1:"\{\}"}, ${0:TARGET});
+    println!(${1:"\{\}"}, ${0});
 
 snippet     fm
 abbr        format!
-    format!("${1:\{\}}", ${0:TARGET});
+    format!("${1:\{\}}", ${0});
 
 # attributes
 
 snippet     ec
 abbr        extern crate
 options     head
-    extern crate ${0:TARGET};
+    extern crate ${0};
     
 snippet     ecl
 abbr        extern crate log
@@ -73,39 +73,39 @@ options     head
 
 snippet     derive
 options     head
-    #[derive(${1:TARGET})]${2}
+    #[derive(${1})]${2}
 
 # statements
 
 snippet     mod
 options     head
     mod ${1:#:mod_name} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     let
-    let ${1:TARGET} = ${2};${3}
+    let ${1} = ${2};${3}
 
 snippet     if
 abbr        if {}
     if ${1:#:condition} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet else
     else {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet elseif
     } else if (${1:#:condition}) {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     ifelse
 abbr        if () {} else {}
     if ${1:#:condition} {
-        ${2:TARGET}
+        ${2}
     } else {
         ${3}
     }
@@ -113,37 +113,37 @@ abbr        if () {} else {}
 snippet     forin
 abbr        forin  {}
     for ${1} in ${2} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     match
-    match ${1:TARGET} {
+    match ${1} {
         ${2:#:pattern} => ${3:#expr},${4}
     }
 
 snippet     mcase
 alias       case
-    ${1:TARGET} => ${2:#expr},${3}
+    ${1} => ${2:#expr},${3}
 
 # data
 
 snippet     struct
 options     head
     struct ${1} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     pubstruct
 abbr        pub struct
 options     head
     pub struct ${1} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     enum
 options     head
     enum ${1} {
-        ${0:TARGET}
+        ${0}
     }
 
 snippet     opt
