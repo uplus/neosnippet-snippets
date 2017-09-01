@@ -46,9 +46,9 @@ abbr        bitflags!
         ${0}
     }
 
-snippet     pln
+snippet     pl
 abbr        println!
-    println!(${1:"\{\}"}, ${0});
+    println!(""${1:\{\}}"", ${0});
 
 snippet     fm
 abbr        format!
@@ -60,7 +60,7 @@ snippet     ec
 abbr        extern crate
 options     head
     extern crate ${0};
-    
+
 snippet     ecl
 abbr        extern crate log
 options     head
